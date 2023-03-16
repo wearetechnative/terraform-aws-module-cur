@@ -3,6 +3,12 @@ variable "name" {
   type        = string
 }
 
+variable "override_s3_fixed_name" {
+  description = "Set this variable in case of existing S3 bucket that should not be renamed because of current data. Generally for pre-provisioned accounts."
+  type = string
+  default = null
+}
+
 variable "kms_key_arn" {
   description = "KMS key to use for encrypting RDS instances."
   type        = string

@@ -75,6 +75,7 @@ module "cur" {
 | <a name="input_format"></a> [format](#input\_format) | Internal use. Format to store files, currently supports Parquet or textORcsv. | `string` | `"Parquet"` | no |
 | <a name="input_kms_key_arn"></a> [kms\_key\_arn](#input\_kms\_key\_arn) | KMS key to use for encrypting RDS instances. | `string` | n/a | yes |
 | <a name="input_name"></a> [name](#input\_name) | Name for Athena CUR. | `string` | n/a | yes |
+| <a name="input_override_s3_fixed_name"></a> [override\_s3\_fixed\_name](#input\_override\_s3\_fixed\_name) | Set this variable in case of existing S3 bucket that should not be renamed because of current data. Generally for pre-provisioned accounts. | `string` | `null` | no |
 | <a name="input_overwrite_report"></a> [overwrite\_report](#input\_overwrite\_report) | Internal use. Overwrite report on new updates. | `bool` | `true` | no |
 | <a name="input_s3_source_replication_configuration"></a> [s3\_source\_replication\_configuration](#input\_s3\_source\_replication\_configuration) | Replication target configuration using this bucket as source. The key of the map is used for naming. This is passed to the S3 module. | <pre>map(object({<br>    destination_bucket_arn  = string<br>    destination_aws_account = string<br>    destination_kms_key_arn = string<br>  }))</pre> | `{}` | no |
 

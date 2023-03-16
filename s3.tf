@@ -1,7 +1,8 @@
 module "cur_s3" {
   source = "git@github.com:TechNative-B-V/terraform-aws-module-s3.git?ref=d23eda80e3de956f30f176fc1f2e0cdfa3ac3ae8"
 
-  name                             = var.name
+  name                             = var.override_s3_fixed_name != null ? var.override_s3_fixed_name : var.name
+  use_fixed_name = var.override_s3_fixed_name != null ? true : false
   kms_key_arn                      = var.kms_key_arn
   bucket_policy_addition           = jsondecode(data.aws_iam_policy_document.costandusagereport_s3_access.json)
   disable_encryption_enforcement   = true
