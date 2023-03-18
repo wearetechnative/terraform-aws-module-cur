@@ -53,7 +53,7 @@ module "cur" {
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_cur_s3"></a> [cur\_s3](#module\_cur\_s3) | git@github.com:TechNative-B-V/terraform-aws-module-s3.git | d23eda80e3de956f30f176fc1f2e0cdfa3ac3ae8 |
+| <a name="module_cur_s3"></a> [cur\_s3](#module\_cur\_s3) | git@github.com:TechNative-B-V/terraform-aws-module-s3.git | 63556b762f684a50af2491294770ae5db731c46f |
 
 ## Resources
 
