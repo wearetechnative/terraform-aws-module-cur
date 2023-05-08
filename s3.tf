@@ -1,5 +1,5 @@
 module "cur_s3" {
-  source = "git@github.com:TechNative-B-V/terraform-aws-module-s3.git?ref=f95b7fd11f654192a74b7a0f0b7dae1004edf7be"
+  source = "git@github.com:TechNative-B-V/terraform-aws-module-s3.git?ref=44279e0b8bdc34327d87781d031bbb7468cefd23"
 
   name                             = var.override_s3_fixed_name != null ? var.override_s3_fixed_name : var.name
   use_fixed_name = var.override_s3_fixed_name != null ? true : false
@@ -7,6 +7,7 @@ module "cur_s3" {
   bucket_policy_addition           = jsondecode(data.aws_iam_policy_document.costandusagereport_s3_access.json)
   disable_encryption_enforcement   = true
   source_replication_configuration = var.s3_source_replication_configuration
+  lifecycle_configuration          = var.lifecycle_rules_configuration
 }
 
 data "aws_iam_policy_document" "costandusagereport_s3_access" {

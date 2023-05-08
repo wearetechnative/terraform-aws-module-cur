@@ -41,3 +41,26 @@ variable "format" {
   type        = string
   default     = "Parquet"
 }
+
+variable "lifecycle_rules_configuration" {
+  description = "Object Lifecycle rules configuration."
+  type = map(object({
+    status = string
+    bucket_prefix = string
+    transition = object({
+      storage_class = string
+      transition_days = number
+    })
+    expiration_days = number
+    noncurrent_version_expiration = object({
+        newer_noncurrent_versions = number
+        noncurrent_days = number
+    })
+    noncurrent_version_transition = object({
+        newer_noncurrent_versions = number
+        noncurrent_days = number
+        storage_class = string
+    })
+  }))
+  default = {}
+}
