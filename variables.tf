@@ -51,7 +51,10 @@ variable "lifecycle_rules_configuration" {
       storage_class = string
       transition_days = number
     })
-    expiration_days = number
+    expiration_days = object({
+      days = number
+      expired_object_delete_marker = bool
+    })
     noncurrent_version_expiration = object({
         newer_noncurrent_versions = number
         noncurrent_days = number
@@ -60,6 +63,9 @@ variable "lifecycle_rules_configuration" {
         newer_noncurrent_versions = number
         noncurrent_days = number
         storage_class = string
+    })
+    abort_incomplete_multipart_upload = object({
+        days_after_initiation = number
     })
   }))
   default = {}
