@@ -70,3 +70,9 @@ variable "lifecycle_rules_configuration" {
   }))
   default = {}
 }
+
+variable "cur_s3_prefix" {
+  description = "Prefix for the CUR S3 bucket."
+  type        = string
+  default     = "cur"
+}
