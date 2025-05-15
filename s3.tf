@@ -1,5 +1,5 @@
 module "cur_s3" {
-  source = "git@github.com:TechNative-B-V/terraform-aws-module-s3.git?ref=480790b2f1190bc1c4f94d2346e18ffcfa112c4f"
+  source = "github.com/wearetechnative/terraform-aws-s3.git?ref=ca91a44b390d18e1998b3e5446b42e1079a11d5d"
 
   name                             = var.override_s3_fixed_name != null ? var.override_s3_fixed_name : var.name
   use_fixed_name = var.override_s3_fixed_name != null ? true : false
