@@ -1,4 +1,4 @@
-# Terraform AWS [CUR] ![](https://img.shields.io/github/workflow/status/wearetechnative/terraform-aws-module-cur/tflint.yaml?branch=main&style=plastic)
+# Terraform AWS [CUR] ![](https://img.shields.io/github/actions/workflow/status/wearetechnative/terraform-aws-module-cur/lint.yaml?branch=main&style=plastic&label=lint) ![](https://img.shields.io/github/actions/workflow/status/wearetechnative/terraform-aws-module-cur/security-scan.yaml?branch=main&style=plastic&label=security)
 
 This module implements Cost and Usage reports in AWS which includes the S3 bucket.
 
